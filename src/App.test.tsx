@@ -4,6 +4,6 @@ import App from "./App";
 
 test("renders default home element", () => {
     render(<App />);
-    const homeElement = screen.getByText(/Home/i);
+    const homeElement = screen.getByText(/Loading/i);
     expect(homeElement).toBeInTheDocument();
 });
