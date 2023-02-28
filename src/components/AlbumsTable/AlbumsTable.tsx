@@ -6,5 +6,24 @@ interface AlbumsTableProps {
 }
 
 export const AlbumsTable = ({ albumsData }: AlbumsTableProps) => {
-    return <div>Table</div>;
+    return (
+        <table>
+            <thead>
+                <tr>
+                    <th>User id</th>
+                    <th>Album title</th>
+                </tr>
+            </thead>
+            <tbody>
+                {albumsData.map((album) => {
+                    return (
+                        <tr key={album.id}>
+                            <td>{album.userId}</td>
+                            <td>{album.title}</td>
+                        </tr>
+                    );
+                })}
+            </tbody>
+        </table>
+    );
 };
