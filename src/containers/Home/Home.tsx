@@ -4,6 +4,7 @@ import { AlbumApiProps } from "types/api";
 import { getAlbums } from "utils/api-service";
 
 export const Home = () => {
+    //TODO: Data logic from API can be abstracted in custom hook, pending task due to time
     const [albumsData, setAlbumsData] = useState<AlbumApiProps[] | null>(null);
     const [isLoadingAlbums, setIsLoadingAlbums] = useState(false);
 
