@@ -26,7 +26,7 @@ describe("Testing <PhotosTable />", () => {
     test("renders table data as expected", () => {
         render(<PhotosTable photosData={photosTestData} />);
         const firstHeader = screen.getByRole("columnheader", {
-            name: "Title",
+            name: "Photo title",
         });
         expect(firstHeader).toBeInTheDocument();
         const rows = screen.getAllByRole("row");
