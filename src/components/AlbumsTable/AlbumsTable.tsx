@@ -12,7 +12,6 @@ export const AlbumsTable = ({ albumsData }: AlbumsTableProps) => {
         <CustomTable>
             <thead>
                 <tr>
-                    <th>User id</th>
                     <th>Album title</th>
                 </tr>
             </thead>

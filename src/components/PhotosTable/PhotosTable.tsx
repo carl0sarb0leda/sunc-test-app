@@ -17,20 +17,22 @@ export const PhotosTable = ({ photosData }: PhotosTableProps) => {
                 </tr>
             </thead>
             <tbody>
-                {photosData.map((photoInfo) => {
+                {photosData.map((photo) => {
                     return (
-                        <tr key={photoInfo.id}>
-                            <td>{photoInfo.title}</td>
-                            <td>{photoInfo.albumId}</td>
+                        <tr key={photo.id}>
+                            <td>{photo.title}</td>
+                            <td>
+                                Photo Id: {photo.id} Album Id: {photo.albumId}
+                            </td>
                             <td>
                                 <a
-                                    href={photoInfo.url}
+                                    href={photo.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     <img
-                                        src={photoInfo.thumbnailUrl}
-                                        alt={photoInfo.title}
+                                        src={photo.thumbnailUrl}
+                                        alt={photo.title}
                                     />
                                 </a>
                             </td>

@@ -57,7 +57,6 @@ export const AlbumTableRow = ({ album }: AlbumTableRowProps) => {
     return (
         <>
             <tr key={album.id}>
-                <td>{album.userId}</td>
                 <TitleCell onClick={() => setIsOpen(!isOpen)}>
                     {album.title}
                 </TitleCell>
