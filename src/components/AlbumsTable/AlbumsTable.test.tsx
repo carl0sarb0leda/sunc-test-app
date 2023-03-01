@@ -22,12 +22,12 @@ describe("Testing <AlbumsTable />", () => {
     test("renders table data as expected", () => {
         render(<AlbumsTable albumsData={albumsTestData} />);
         const firstHeader = screen.getByRole("columnheader", {
-            name: "User id",
+            name: "Album title",
         });
         expect(firstHeader).toBeInTheDocument();
         const rows = screen.getAllByRole("row");
         expect(rows.length).toBe(3);
         const cells = screen.getAllByRole("cell");
-        expect(cells.length).toBe(4);
+        expect(cells.length).toBe(2);
     });
 });
