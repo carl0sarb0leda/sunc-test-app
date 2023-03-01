@@ -1,6 +1,7 @@
 import React from "react";
 import { AlbumApiProps } from "types/api";
 import { AlbumTableRow } from "components/AlbumTableRow/AlbumTableRow";
+import { CustomTable } from "styles/table.styled";
 
 interface AlbumsTableProps {
     albumsData: AlbumApiProps[];
@@ -8,7 +9,7 @@ interface AlbumsTableProps {
 
 export const AlbumsTable = ({ albumsData }: AlbumsTableProps) => {
     return (
-        <table>
+        <CustomTable>
             <thead>
                 <tr>
                     <th>User id</th>
@@ -20,6 +21,6 @@ export const AlbumsTable = ({ albumsData }: AlbumsTableProps) => {
                     return <AlbumTableRow key={album.id} album={album} />;
                 })}
             </tbody>
-        </table>
+        </CustomTable>
     );
 };

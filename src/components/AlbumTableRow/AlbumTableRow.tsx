@@ -2,6 +2,11 @@ import React, { useCallback, useEffect, useState } from "react";
 import { AlbumApiProps, PhotoApiProps } from "types/api";
 import { PhotosTable } from "components";
 import { getPhotos } from "utils/api-service";
+import {
+    CustomTableRow,
+    PhotosTableWrapper,
+    TitleCell,
+} from "styles/table.styled";
 
 interface AlbumTableRowProps {
     album: AlbumApiProps;
@@ -37,19 +42,13 @@ export const AlbumTableRow = ({ album }: AlbumTableRowProps) => {
         }
         if (photosData) {
             return (
-                <tr>
-                    <td colSpan={2}>
-                        <div
-                            style={{
-                                display: "grid",
-                                height: "10rem",
-                                overflowY: "auto",
-                            }}
-                        >
+                <CustomTableRow>
+                    <td>
+                        <PhotosTableWrapper>
                             <PhotosTable photosData={photosData} />
-                        </div>
+                        </PhotosTableWrapper>
                     </td>
-                </tr>
+                </CustomTableRow>
             );
         }
         return null;
@@ -59,7 +58,9 @@ export const AlbumTableRow = ({ album }: AlbumTableRowProps) => {
         <>
             <tr key={album.id}>
                 <td>{album.userId}</td>
-                <td onClick={() => setIsOpen(!isOpen)}>{album.title}</td>
+                <TitleCell onClick={() => setIsOpen(!isOpen)}>
+                    {album.title}
+                </TitleCell>
             </tr>
             {renderPhotosTable()}
         </>

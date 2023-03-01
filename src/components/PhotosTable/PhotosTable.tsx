@@ -1,5 +1,6 @@
 import React from "react";
 import { PhotoApiProps } from "types/api";
+import { CustomTable } from "styles/table.styled";
 
 interface PhotosTableProps {
     photosData: PhotoApiProps[];
@@ -7,7 +8,7 @@ interface PhotosTableProps {
 
 export const PhotosTable = ({ photosData }: PhotosTableProps) => {
     return (
-        <table>
+        <CustomTable isPhotosTable cellSpacing={0}>
             <thead>
                 <tr>
                     <th>Photo title</th>
@@ -37,6 +38,6 @@ export const PhotosTable = ({ photosData }: PhotosTableProps) => {
                     );
                 })}
             </tbody>
-        </table>
+        </CustomTable>
     );
 };
