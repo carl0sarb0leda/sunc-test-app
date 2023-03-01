@@ -1,9 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+describe("Testing <App />", () => {
+    test("renders in root router location", () => {
+        render(<App />);
+        expect(window.location.pathname).toBe("/");
+    });
+    test("renders default home element", () => {
+        render(<App />);
+        const homeElement = screen.getByText(/Loading/i);
+        expect(homeElement).toBeInTheDocument();
+    });
 });
