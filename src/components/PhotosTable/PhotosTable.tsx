@@ -10,7 +10,7 @@ export const PhotosTable = ({ photosData }: PhotosTableProps) => {
         <table>
             <thead>
                 <tr>
-                    <th>Title</th>
+                    <th>Photo title</th>
                     <th>Description</th>
                     <th>Thumbnail</th>
                 </tr>
@@ -21,7 +21,18 @@ export const PhotosTable = ({ photosData }: PhotosTableProps) => {
                         <tr key={photoInfo.id}>
                             <td>{photoInfo.title}</td>
                             <td>{photoInfo.albumId}</td>
-                            <td>{photoInfo.thumbnailUrl}</td>
+                            <td>
+                                <a
+                                    href={photoInfo.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        src={photoInfo.thumbnailUrl}
+                                        alt={photoInfo.title}
+                                    />
+                                </a>
+                            </td>
                         </tr>
                     );
                 })}
